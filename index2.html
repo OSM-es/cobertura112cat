@@ -60,9 +60,9 @@
        // query part for: “wheelchair=no and highway=footway”
       // way["wheelchair"="no"]["highway"="footway"](area.searchArea);
        // query part for: “wheelchair=no and shop=*”
-      // node["wheelchair"="no"]["shop"](area.searchArea);
+       node["highway"="stop"]["traffic_sign:forward"](area.searchArea);
          // query part for: “wheelchair=yes and shop=*”
-      // node["wheelchair"="yes"]["shop"](area.searchArea);
+       node["highway"="stop"]["traffic_sign:backward"](area.searchArea);
          // query part for: “wheelchair=limited and shop=*”
      //  node["wheelchair"="limited"]["shop"](area.searchArea);
      );
@@ -85,8 +85,8 @@
           pointToLayer: function(feature, latlng) {
             //console.log(feature);
             var icon = null;
-            if (feature.properties.tags.traffic_sign) {
-              if (feature.properties.tags.traffic_sign:forward == "ES:R2") {
+            if (feature.properties.tags.highway) {
+              if (feature.properties.tags.highway == "stop") {
                 icon = L.icon({
                           iconSize: [27, 27],
                           iconAnchor: [13, 27],
