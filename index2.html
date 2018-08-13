@@ -85,8 +85,8 @@
           pointToLayer: function(feature, latlng) {
             //console.log(feature);
             var icon = null;
-            if (feature.properties.tags.shop) {
-              if (feature.properties.tags.wheelchair == "yes") {
+            if (feature.properties.tags.traffic_sign:forward) {
+              if (feature.properties.tags.traffic_sign:forward == "ES:R2") {
                 icon = L.icon({
                           iconSize: [27, 27],
                           iconAnchor: [13, 27],
