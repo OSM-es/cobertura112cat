@@ -58,13 +58,13 @@
        // query part for: “"obstacle:wheelchair"=yes”
        node["obstacle:wheelchair"="yes"](area.searchArea);
        // query part for: “wheelchair=no and highway=footway”
- //      way["wheelchair"="no"]["highway"="footway"](area.searchArea);
+       way["wheelchair"="no"]["highway"="footway"](area.searchArea);
        // query part for: “wheelchair=no and shop=*”
-   //    node["wheelchair"="no"]["shop"](area.searchArea);
-         // query part for: “wheelchair=yes and shop=*”
-   //    node["wheelchair"="yes"]["shop"](area.searchArea);
-         // query part for: “wheelchair=limited and shop=*”
-   //    node["wheelchair"="limited"]["shop"](area.searchArea);
+       node["wheelchair"="no"]["shop"](area.searchArea);
+        // query part for: “wheelchair=yes and shop=*”
+       node["wheelchair"="yes"]["shop"](area.searchArea);
+        // query part for: “wheelchair=limited and shop=*”
+       node["wheelchair"="limited"]["shop"](area.searchArea);
      );
      (._;>;);out;
      `;
