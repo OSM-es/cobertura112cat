@@ -107,6 +107,35 @@ if (feature.properties.tags['traffic_sign:forward'] == "ES:R2") {
               }
 
             }
+			
+            if (feature.properties.tags.highway) {
+if (feature.properties.tags['traffic_sign:backward'] == "ES:R2") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [13, 27],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_ESR2
+                });
+
+              } else if (feature.properties.tags['traffic_sign:backward'] == "ES:R1") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [13, 27],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_ESR1
+                });
+
+              } else if (feature.properties.tags.wheelchair == "limited") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [13, 27],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_shop_limited_wheelchair
+                });
+
+              }
+
+            }
             if (icon) {
               return L.marker(latlng, {icon: icon});
             }
