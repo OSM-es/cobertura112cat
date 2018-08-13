@@ -40,9 +40,9 @@
 
    var setupMap = function () {
      mymap = L.map('mapid').setView([41.4441608, 2.2234922], 13);
-     var osmUrl='https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png';
-     var osmAttrib='&copy; Openstreetmap France | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-     var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 19, attribution: osmAttrib});
+     var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+     var osmAttrib='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+     var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 18, attribution: osmAttrib});
      mymap.addLayer(osm);
      geoLayer = L.geoJson().addTo(mymap);
    };
@@ -58,13 +58,13 @@
        // query part for: “"obstacle:wheelchair"=yes”
        node["obstacle:wheelchair"="yes"](area.searchArea);
        // query part for: “wheelchair=no and highway=footway”
- //      way["wheelchair"="no"]["highway"="footway"](area.searchArea);
+       way["wheelchair"="no"]["highway"="footway"](area.searchArea);
        // query part for: “wheelchair=no and shop=*”
-   //    node["wheelchair"="no"]["shop"](area.searchArea);
+       node["wheelchair"="no"]["shop"](area.searchArea);
          // query part for: “wheelchair=yes and shop=*”
-   //    node["wheelchair"="yes"]["shop"](area.searchArea);
+       node["wheelchair"="yes"]["shop"](area.searchArea);
          // query part for: “wheelchair=limited and shop=*”
-   //    node["wheelchair"="limited"]["shop"](area.searchArea);
+       node["wheelchair"="limited"]["shop"](area.searchArea);
      );
      (._;>;);out;
      `;
