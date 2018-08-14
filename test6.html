@@ -60,6 +60,10 @@
        node["traffic_sign:forward"](area.searchArea);
        // query part for: “"obstacle:wheelchair"=yes”
        node["traffic_sign:backward"](area.searchArea);
+	          // query part for: “crossing=unmarked”
+       node["traffic_sign:2:forward"](area.searchArea);
+       // query part for: “"obstacle:wheelchair"=yes”
+       node["traffic_sign:2:backward"](area.searchArea);
      );
      (._;>;);out;
      `;
