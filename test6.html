@@ -79,47 +79,42 @@
           pointToLayer: function(feature, latlng) {
             //console.log(feature);
             var icon = null;
-if (feature.properties.tags['traffic_sign:forward'] == "ES:R2" && "side=right") {
+			
+			//ES:S13
+			
+if (feature.properties.tags['traffic_sign:forward'] == "ES:S13" && "side=right") {
                 icon = L.icon({
                           iconSize: [16, 16],
                           iconAnchor: [8, 0],
                           popupAnchor:  [1, -24],
-                          iconUrl: icon_ESR2
-                });
-
-              } else if (feature.properties.tags['traffic_sign:forward'] == "ES:R2" && "side=left") {
-                icon = L.icon({
-                          iconSize: [16, 16],
-                          iconAnchor: [16, 0],
-                          popupAnchor:  [1, -24],
-                          iconUrl: icon_ESR2
+                          iconUrl: icon_ESS13
                 });
 				
-              } else if (feature.properties.tags['traffic_sign:forward'] == "ES:R1" && "side=left") {
-                icon = L.icon({
-                          iconSize: [16, 16],
-                          iconAnchor: [16, 0],
-                          popupAnchor:  [1, -24],
-                          iconUrl: icon_ESR1
-                });
-				
-				              } else if (feature.properties.tags['traffic_sign:forward'] == "ES:R1" && "side=right") {
+			} else if (feature.properties.tags['traffic_sign:backward'] == "ES:S13" && "side=right") {
                 icon = L.icon({
                           iconSize: [16, 16],
                           iconAnchor: [8, 0],
                           popupAnchor:  [1, -24],
-                          iconUrl: icon_shop_limited_wheelchair
+                          iconUrl: icon_ESS13
                 });
 
-              } else if (feature.properties.tags.wheelchair == "limited") {
+            } else if (feature.properties.tags['traffic_sign:forward'] == "ES:S13" && "side=left") {
                 icon = L.icon({
-                          iconSize: [20, 20],
-                          iconAnchor: [13, 27],
+                          iconSize: [16, 16],
+                          iconAnchor: [16, 0],
                           popupAnchor:  [1, -24],
-                          iconUrl: icon_shop_limited_wheelchair
+                          iconUrl: icon_ESS13
                 });
 				
+            } else if (feature.properties.tags['traffic_sign:backward'] == "ES:S13" && "side=left") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [16, 0],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_ESS13
+             });
 				
+
 
               }
 
