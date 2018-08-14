@@ -82,13 +82,13 @@
             var icon = null;
 			
 			//ES:S13
-      var icon_ES_S13 = 'https://github.com/yopaseopor/beta_style_josm/raw/master/traffic_signs_EUR/ES/ES_S13.png';			
+      var icon.ES_S13 = 'https://github.com/yopaseopor/beta_style_josm/raw/master/traffic_signs_EUR/ES/ES_S13.png';			
 if (feature.properties.tags['traffic_sign:forward'] == "ES:S13" && "side=right") {
                 icon = L.icon({
                           iconSize: [16, 16],
                           iconAnchor: [8, 0],
                           popupAnchor:  [1, -24],
-                          iconUrl: icon_ES_S13
+                          iconUrl: icon.ES_S13
                 });
 				
 			} else if (feature.properties.tags['traffic_sign:backward'] == "ES:S13" && "side=right") {
@@ -96,7 +96,7 @@ if (feature.properties.tags['traffic_sign:forward'] == "ES:S13" && "side=right")
                           iconSize: [16, 16],
                           iconAnchor: [8, 0],
                           popupAnchor:  [1, -24],
-                          iconUrl: icon_ES_S13
+                          iconUrl: icon.ES_S13
                 });
 
             } else if (feature.properties.tags['traffic_sign:forward'] == "ES:S13" && "side=left") {
@@ -104,7 +104,7 @@ if (feature.properties.tags['traffic_sign:forward'] == "ES:S13" && "side=right")
                           iconSize: [16, 16],
                           iconAnchor: [16, 0],
                           popupAnchor:  [1, -24],
-                          iconUrl: icon_ES_S13
+                          iconUrl: icon.ES_S13
                 });
 				
             } else if (feature.properties.tags['traffic_sign:backward'] == "ES:S13" && "side=left") {
@@ -112,7 +112,7 @@ if (feature.properties.tags['traffic_sign:forward'] == "ES:S13" && "side=right")
                           iconSize: [16, 16],
                           iconAnchor: [16, 0],
                           popupAnchor:  [1, -24],
-                          iconUrl: icon_ES_S13
+                          iconUrl: icon.ES_S13
              });
 				
 
