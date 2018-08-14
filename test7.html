@@ -127,7 +127,7 @@ if (feature.properties.tags['traffic_sign:forward'] == "ES:R1" && "side=right") 
 		/////////////////////////TRAFFIC_SIGNS:2	//ES:R1
       var icon_ES_R1 = 'https://github.com/yopaseopor/beta_style_josm/raw/master/traffic_signs_EUR/ES/ES_R1.png';			
 if (feature.properties.tags['traffic_sign:2:forward'] == "ES:R1" && "side=right") {
-                icon = L.icon2({
+                icon2 = L.icon({
                           iconSize: [16, 16],
                           iconAnchor: [8, 100],
                           popupAnchor:  [1, -24],
@@ -135,7 +135,7 @@ if (feature.properties.tags['traffic_sign:2:forward'] == "ES:R1" && "side=right"
                 });
 				
 			} else if (feature.properties.tags['traffic_sign:2:backward'] == "ES:R1" && "side=right") {
-                icon = L.icon2({
+                icon2 = L.icon({
                           iconSize: [16, 16],
                           iconAnchor: [8, 100],
                           popupAnchor:  [1, -24],
@@ -143,7 +143,7 @@ if (feature.properties.tags['traffic_sign:2:forward'] == "ES:R1" && "side=right"
                 });
 
             } else if (feature.properties.tags['traffic_sign:2:forward'] == "ES:R1" && "side=left") {
-                icon = L.icon2({
+                icon2 = L.icon({
                           iconSize: [16, 16],
                           iconAnchor: [16, 100],
                           popupAnchor:  [1, -24],
@@ -151,7 +151,7 @@ if (feature.properties.tags['traffic_sign:2:forward'] == "ES:R1" && "side=right"
                 });
 				
             } else if (feature.properties.tags['traffic_sign:2:backward'] == "ES:R1" && "side=left") {
-                icon = L.icon2({
+                icon2 = L.icon({
                           iconSize: [16, 16],
                           iconAnchor: [16, 100],
                           popupAnchor:  [1, -24],
