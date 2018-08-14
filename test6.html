@@ -43,9 +43,9 @@
 
    var setupMap = function () {
      mymap = L.map('mapid').setView([41.2221000, 1.7248700], 13);
-     var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-     var osmAttrib='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-     var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 18, attribution: osmAttrib});
+     var osmUrl='https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png';
+     var osmAttrib='&copy; Openstreetmap France | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+     var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 20, attribution: osmAttrib});
      mymap.addLayer(osm);
      geoLayer = L.geoJson().addTo(mymap);
    };
