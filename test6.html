@@ -161,6 +161,45 @@ if (feature.properties.tags['traffic_sign:forward'] == "ES:R2" && "side=right") 
               }
 			  
 			  
+			  //////////////////////////////////////////////////////////////			//ES:R303
+      var icon_ES_R303 = 'https://github.com/yopaseopor/beta_style_josm/raw/master/traffic_signs_EUR/ES/ES_R303.png';			
+if (feature.properties.tags['traffic_sign:forward'] == "ES:R303" && "side=right") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [8, 0],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_ES_R303
+                });
+				
+			} else if (feature.properties.tags['traffic_sign:backward'] == "ES:R303" && "side=right") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [8, 0],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_ES_R303
+                });
+
+            } else if (feature.properties.tags['traffic_sign:forward'] == "ES:R303" && "side=left") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [16, 0],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_ES_R303
+                });
+				
+            } else if (feature.properties.tags['traffic_sign:backward'] == "ES:R303" && "side=left") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [16, 0],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_ES_R303
+             });
+				
+
+
+              }
+			  
+			  
 			  //////////////////////////////////////////////////////////////		
 			//ES:S13
       var icon_ES_S13 = 'https://github.com/yopaseopor/beta_style_josm/raw/master/traffic_signs_EUR/ES/ES_S13.png';			
