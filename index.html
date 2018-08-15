@@ -36,9 +36,9 @@
    // localització de l'inici del mapa lat,lon,zoom d'inici
      mymap = L.map('mapid').setView([41.2221000, 1.7248700], 13);
 	 //tria de capa de mapa: opentopomap
-     var osmUrl='https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png';
+     var osmUrl='https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
 	 //atribucio correcta del mapa
-     var osmAttrib='&copy; Openstreetmap France | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+     var osmAttrib='Dades dels punts suministrats per @Emergenciescat | Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)';
      var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 20, attribution: osmAttrib});
      mymap.addLayer(osm);
      geoLayer = L.geoJson().addTo(mymap);
@@ -78,7 +78,7 @@
             var icon = null;
 ////////CODI PALS////////////////////
 			//PAL112
-      var icon_palcobertura112 = 'https://github.com/osmcatala/cobertura112/raw/master/assets/img/pal_cobertura.svg';			
+      var icon_palcobertura112 = 'https://github.com/osmcatala/cobertura112/raw/master/assets/img/pal_cobertura.png';			
 if (feature.properties.tags['emergency'] == "access_point") {
                 icon = L.icon({
                           iconSize: [16, 16],
