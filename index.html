@@ -77,30 +77,43 @@
             //console.log(feature);
             var icon = null;
 ////////CODI PALS////////////////////
-			//PAL112
-      var icon_palcobertura112 = 'https://github.com/osmcatala/cobertura112/raw/master/assets/img/pal_cobertura.png';			
-if (feature.properties.tags['emergency'] == "access_point") {
+						//ES:P15a
+      var icon_ES_P15a = 'https://osm-catalan.github.io/cobertura112cat/assets/img/pal_cobertura.png';			
+if (feature.properties.tags['traffic_sign:forward'] == "ES:P15a") {
                 icon = L.icon({
                           iconSize: [16, 16],
                           iconAnchor: [8, 0],
                           popupAnchor:  [1, -24],
-                          iconUrl: palcobertura112
+                          iconUrl: icon_ES_P15a
                 });
 				
-// per replicar			} else if (feature.properties.tags['traffic_sign:backward'] == "ES:B2a" && "side=right") {
-// per replicar                icon = L.icon({
-// per replicar                          iconSize: [16, 16],
-// per replicar                          iconAnchor: [8, 0],
-// per replicar                          popupAnchor:  [1, -24],
-// per replicar                          iconUrl: icon_ES_B2a
-// per replicar                });
+			} else if (feature.properties.tags['traffic_sign:backward'] == "ES:P15a" && "side=right") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [8, 0],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_ES_P15a
+                });
 
+            } else if (feature.properties.tags['traffic_sign:forward'] == "ES:P15a" && "side=left") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [16, 0],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_ES_P15a
+                });
+				
+            } else if (feature.properties.tags['traffic_sign:backward'] == "ES:P15a" && "side=left") {
+                icon = L.icon({
+                          iconSize: [16, 16],
+                          iconAnchor: [16, 0],
+                          popupAnchor:  [1, -24],
+                          iconUrl: icon_ES_P15a
+             });
+				
 
 
               }
-			  
-			  
-			  //////////////////////////////////////////////////////////////
 			  
 			  
 			  //////////////////////////////////////////////////////////////
