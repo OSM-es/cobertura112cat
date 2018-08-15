@@ -78,39 +78,16 @@
             var icon = null;
 ////////CODI PALS////////////////////
 						//ES:P15a
-      var icon_ES_P15a = 'https://osm-catalan.github.io/cobertura112cat/assets/img/pal_cobertura.png';			
-if (feature.properties.tags['traffic_sign:forward'] == "ES:P15a") {
+      var icon_112 = 'https://osm-catalan.github.io/cobertura112cat/assets/img/pal_cobertura.png';			
+if (feature.properties.tags['emergency'] == "access_point") {
                 icon = L.icon({
                           iconSize: [16, 16],
                           iconAnchor: [8, 0],
                           popupAnchor:  [1, -24],
-                          iconUrl: icon_ES_P15a
+                          iconUrl: icon_112
                 });
 				
-			} else if (feature.properties.tags['traffic_sign:backward'] == "ES:P15a" && "side=right") {
-                icon = L.icon({
-                          iconSize: [16, 16],
-                          iconAnchor: [8, 0],
-                          popupAnchor:  [1, -24],
-                          iconUrl: icon_ES_P15a
-                });
 
-            } else if (feature.properties.tags['traffic_sign:forward'] == "ES:P15a" && "side=left") {
-                icon = L.icon({
-                          iconSize: [16, 16],
-                          iconAnchor: [16, 0],
-                          popupAnchor:  [1, -24],
-                          iconUrl: icon_ES_P15a
-                });
-				
-            } else if (feature.properties.tags['traffic_sign:backward'] == "ES:P15a" && "side=left") {
-                icon = L.icon({
-                          iconSize: [16, 16],
-                          iconAnchor: [16, 0],
-                          popupAnchor:  [1, -24],
-                          iconUrl: icon_ES_P15a
-             });
-				
 
 
               }
