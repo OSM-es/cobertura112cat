@@ -20,6 +20,7 @@
   <body>
     <div class="container">
       <h1>OSM + Cat: Punts de Cobertura del 112</h1>
+	  Dades extretes d'OpenStreetMap . Els punts aquí localitzats no han estat comprovats per aquesta pàgina personalment. Ús a títol informatiu i sota la vostra responsabilitat
       <div id="mapid"></div>
     </div>
 
@@ -47,16 +48,16 @@
    var getData = function () {
      var query = `
 	 
-//////////////COMENÇA PETICIÓ OVERPASS TURBO
+//////////////COMENÇA PETICIÓ OVERPASS TURBO, serveix per a internament trobar els punts que volem destacar
 		//Temps d'espera, abans de donar per fallit, a moltes dades,temps més llargs
      [out:json][timeout:60];
-		// Definim Catalunya, aquest límit es pot trobar exportant “Catalunya” to search in
+		// Definim Catalunya, aquest límit es pot trobar exportant la cerca  "in Catalonia" feta per l'assistent d'Overpass-turbo. Es pot cercar qualsevol localització in exportar la petició ens donarà el codi d'àrea.
      area(3600349053)->.searchArea;
-     // gather results
      (
-       // query part for: “crossing=unmarked”
+     //  tipus de petició node["clau"="valor]
 	   node["emergency"](area.searchArea);
      );
+/////////////ACABA PETICIÓ OVERPASS TURBO	 
      (._;>;);out;
      `;
      //query = "data=[out:json];way[building=residential](41.878660,12.562383,41.883125,12.571663);(._;>;);out;";
@@ -76,13 +77,18 @@
           pointToLayer: function(feature, latlng) {
             //console.log(feature);
             var icon = null;
-////////TRAFFIC SIGNS CODE////////////////////
-      var icon_112 = 'https://osm-catalan.github.io/cobertura112cat/assets/img/pal_cobertura.png';			
+////////INICI CODI DIBUIX DELS PUNTS////////////////////
+//var icon_nomdelavariablesensecaractersraros = 'adreçaURL';
+      var icon_112 = 'https://osm-catalan.github.io/cobertura112cat/assets/img/pal_cobertura.png';	
+//etiqueta entre claudàtors [ ] i == valor	  
 if (feature.properties.tags['emergency'] == "access_point") {
                 icon = L.icon({
+				//mida de la icona 
                           iconSize: [25, 39],
+			    //colocació de la icona des d'on està situat el punt
                           iconAnchor: [8, 0],
                           popupAnchor:  [1, -24],
+				// correspon al nom de la variable anterior		  
                           iconUrl: icon_112
                 });
 				
