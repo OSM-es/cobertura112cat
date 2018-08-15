@@ -3,12 +3,12 @@
 ## Instruccions per al públic general
 
 1. Forqueja aquest repositori amb el teu compte de github
-2. Activa a Settings la possibilitat de pàgines web, en la mateixa branca master ja serveix
+2. Activa a Settings la possibilitat de pàgines web, en la mateixa branca master ja serveix i canvia-li el nom al repositori per a que s'adapti al que mostrarà
 3. Revisa l'arxiu index.html, segueix les línies de comentaris (//) i modifica el que necessitis
 4. Afegeix les imatges que requereixis a la carpeta assets/img
 5. Gaudeix del teu mapa amb l'adreça nomdelteucompte.github.io/nomqueliposisaaquestrepositori
 
-Exemple: http://yopaseopor.github.io/cobertura112cat
+Exemple: https://osm-catalan.github.io/cobertura112cat/
 
 ## Instruccions avançades
 
