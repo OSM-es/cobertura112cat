@@ -33,17 +33,24 @@
    var geoLayer;
 
    var setupMap = function () {
+//localització d'inici [lat,lon] ,zoom d'inici)
      mymap = L.map('mapid').setView([41.2221000, 1.7248700], 13);
+//fons de mapa que es farà servir. En trobaràs més cercant Leaflet providers Demo 	 
      var osmUrl='https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
+//Atribució correcta, important per a utilitzar mapes lliures i marcar l'origen de les dades	 
      var osmAttrib='Dades del mapa: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Estil de mapa: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)';
+//Zoom mínim, Zoom màxim	 
      var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 17, attribution: osmAttrib});
      mymap.addLayer(osm);
      geoLayer = L.geoJson().addTo(mymap);
    };
    var getData = function () {
      var query = `
+	 
+//////////////COMENÇA PETICIÓ OVERPASS TURBO
+		//Temps d'espera, abans de donar per fallit, a moltes dades,temps més llargs
      [out:json][timeout:60];
-     // fetch area “Catalunya” to search in
+		// Definim Catalunya, aquest límit es pot trobar exportant “Catalunya” to search in
      area(3600349053)->.searchArea;
      // gather results
      (
