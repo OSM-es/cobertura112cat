@@ -41,7 +41,7 @@
 //Atribución correcta, importante para usar mapas libres y marcar el origen de los datos	 
      var osmAttrib='Datos del mapa: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Estilo de mapa: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)';
 //Zoom mínimo, Zoom máximo	 
-     var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 17, attribution: osmAttrib});
+     var osm = new L.TileLayer(osmUrl, {minZoom: 3, maxZoom: 17, attribution: osmAttrib});
      mymap.addLayer(osm);
      geoLayer = L.geoJson().addTo(mymap);
    };
