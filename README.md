@@ -1,6 +1,9 @@
-# OSM query Overpass + render geojson with Leaflet
+# OSM + CAT: Exemple comentat internament de mapa personalitzat de punts sobre mapa OSM fet amb petició Overpass i renderitzant geojson amb Leaflet
 
-## Instructions
+##Instruccions per al públic general
+
+
+## Instruccions avançades
 
 1. Clone repo
 2. Launch local webserver (i.e)
