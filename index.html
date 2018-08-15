@@ -54,17 +54,7 @@
      // gather results
      (
        // query part for: “crossing=unmarked”
-       node["crossing"="unmarked"](area.searchArea);
-       // query part for: “"obstacle:wheelchair"=yes”
-       node["obstacle:wheelchair"="yes"](area.searchArea);
-       // query part for: “wheelchair=no and highway=footway”
-       way["wheelchair"="no"]["highway"="footway"](area.searchArea);
-       // query part for: “wheelchair=no and shop=*”
-       node["wheelchair"="no"]["shop"](area.searchArea);
-        // query part for: “wheelchair=yes and shop=*”
-       node["wheelchair"="yes"]["shop"](area.searchArea);
-        // query part for: “wheelchair=limited and shop=*”
-       node["wheelchair"="limited"]["shop"](area.searchArea);
+       node["emergency"="access_point"](area.searchArea);
      );
      (._;>;);out;
      `;
@@ -85,32 +75,22 @@
           pointToLayer: function(feature, latlng) {
             //console.log(feature);
             var icon = null;
-            if (feature.properties.tags.shop) {
-              if (feature.properties.tags.wheelchair == "yes") {
+ 						//ES:P15a
+      var icon_ES_P15a = 'https://github.com/yopaseopor/beta_style_josm/raw/master/traffic_signs_EUR/ES/ES_P15a.png';			
+if (feature.properties.tags['emergency'] == "access_point") {
                 icon = L.icon({
-                          iconSize: [27, 27],
-                          iconAnchor: [13, 27],
+                          iconSize: [16, 16],
+                          iconAnchor: [8, 0],
                           popupAnchor:  [1, -24],
-                          iconUrl: icon_shop_yes_wheelchair
+                          iconUrl: icon_ES_P15a
                 });
 
-              } else if (feature.properties.tags.wheelchair == "no") {
-                icon = L.icon({
-                          iconSize: [27, 27],
-                          iconAnchor: [13, 27],
-                          popupAnchor:  [1, -24],
-                          iconUrl: icon_shop_no_wheelchair
-                });
 
-              } else if (feature.properties.tags.wheelchair == "limited") {
-                icon = L.icon({
-                          iconSize: [27, 27],
-                          iconAnchor: [13, 27],
-                          popupAnchor:  [1, -24],
-                          iconUrl: icon_shop_limited_wheelchair
-                });
 
               }
+			  
+			  
+			  //////////////////////////////////////////////////////////////
 
             }
             if (icon) {
