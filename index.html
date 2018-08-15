@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>OSM + Cat: Punts de Cobertura del 112</title>
+    <title>OSM-ES: Puntos de Cobertura del 112</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
@@ -19,8 +19,8 @@
   </head>
   <body>
     <div class="container">
-      <h1>OSM + Cat: Punts de Cobertura del 112</h1>
-	  Dades extretes d'OpenStreetMap . Els punts aquí localitzats no han estat comprovats per aquesta pàgina personalment. Ús a títol informatiu i sota la vostra responsabilitat
+      <h1>OSM-ES: Puntos de Cobertura del 112</h1>
+	  Datos extraídos de OpenStreetMap . Los puntos aquí localizados no han sido comprobados por esta página personalmente. Uso a título informativo y bajo vuestra responsabilidad.
       <div id="mapid"></div>
     </div>
 
@@ -34,13 +34,13 @@
    var geoLayer;
 
    var setupMap = function () {
-//localització d'inici [lat,lon] ,zoom d'inici)
+//localización de inicio [lat,lon] ,zoom de inicio)
      mymap = L.map('mapid').setView([41.2221000, 1.7248700], 13);
-//fons de mapa que es farà servir. En trobaràs més cercant Leaflet providers Demo 	 
+//fondo de mapa que se utilizará. Encontrarás más buscando Leaflet providers Demo 	 
      var osmUrl='https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
-//Atribució correcta, important per a utilitzar mapes lliures i marcar l'origen de les dades	 
-     var osmAttrib='Dades del mapa: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Estil de mapa: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)';
-//Zoom mínim, Zoom màxim	 
+//Atribución correcta, importante para usar mapas libres y marcar el origen de los datos	 
+     var osmAttrib='Datos del mapa: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Estilo de mapa: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)';
+//Zoom mínimo, Zoom máximo	 
      var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 17, attribution: osmAttrib});
      mymap.addLayer(osm);
      geoLayer = L.geoJson().addTo(mymap);
@@ -48,16 +48,16 @@
    var getData = function () {
      var query = `
 	 
-//////////////COMENÇA PETICIÓ OVERPASS TURBO, serveix per a internament trobar els punts que volem destacar
-		//Temps d'espera, abans de donar per fallit, a moltes dades,temps més llargs
+//////////////EMPIZA PETICIÓN OVERPASS TURBO, sirve para internamente encontrar los puntos que queramos destacar
+		//Tiempo de espera, antes de dar por fallido, para muchos datos tiempos más largos
      [out:json][timeout:60];
-		// Definim Catalunya, aquest límit es pot trobar exportant la cerca  "in Catalonia" feta per l'assistent d'Overpass-turbo. Es pot cercar qualsevol localització in exportar la petició ens donarà el codi d'àrea.
-     area(3600349053)->.searchArea;
+		// Definimos España, este límite se puede encontrar exportando la búsqueda  "in Spain" hecha por el asistente de Overpass-turbo. Se puede buscar cualquier localización y al exportar la petición nos dará el código de área.
+     area(3601311341)->.searchArea;
      (
-     //  tipus de petició node["clau"="valor]
+     //  tipo de petición nodo["clave"="valor]
 	   node["emergency"](area.searchArea);
      );
-/////////////ACABA PETICIÓ OVERPASS TURBO	 
+/////////////ACABA PETICIÓN OVERPASS TURBO	 
      (._;>;);out;
      `;
      //query = "data=[out:json];way[building=residential](41.878660,12.562383,41.883125,12.571663);(._;>;);out;";
@@ -77,18 +77,18 @@
           pointToLayer: function(feature, latlng) {
             //console.log(feature);
             var icon = null;
-////////INICI CODI DIBUIX DELS PUNTS////////////////////
-//var icon_nomdelavariablesensecaractersraros = 'adreçaURL';
-      var icon_112 = 'https://osm-catalan.github.io/cobertura112cat/assets/img/pal_cobertura.png';	
-//etiqueta entre claudàtors [ ] i == valor	  
+////////INICIO CÓDIGO DIBUJO DE LOS PUNTOS////////////////////
+//var icon_nombredelavariablesincaracteresraros = 'direcciónURL';
+      var icon_112 = 'https://osm-es.github.io/cobertura112es/assets/img/pal_cobertura.png';	
+//etiqueta entre claudátors [ ] i == valor	  
 if (feature.properties.tags['emergency'] == "access_point") {
                 icon = L.icon({
-				//mida de la icona 
+				//tamaño del icono 
                           iconSize: [25, 39],
-			    //colocació de la icona des d'on està situat el punt
+			    //colocación del icono desde donde está situado el punto
                           iconAnchor: [8, 0],
                           popupAnchor:  [1, -24],
-				// correspon al nom de la variable anterior		  
+				// corresponde al nombre de la variable anterior		  
                           iconUrl: icon_112
                 });
 				
