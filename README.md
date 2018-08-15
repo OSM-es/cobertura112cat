@@ -17,7 +17,7 @@ Ejemplo: https://osm-es.github.io/cobertura112es/
 ```
 python -m SimpleHTTPServer
 ```
-3. Abre tu navegador favorito con `http: // localhost: 8000`
+3. Abre tu navegador favorito con `http://localhost:8000`
 4. Verás algo similar a
 
-![Screenshot of rendered map] (/assets/gitHub/sc1.jpg)
+![Screenshot of rendered map](/assets/github/sc1.jpg)
