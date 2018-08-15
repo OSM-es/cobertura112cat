@@ -1,6 +1,6 @@
 # OSM + CAT: Exemple comentat internament de mapa personalitzat de punts sobre mapa OSM fet amb petició Overpass i renderitzant geojson amb Leaflet
 
-## Instruccions per al públic general
+## Instruccions pel públic general
 
 1. Forqueja aquest repositori amb el teu compte de github
 2. Activa a Settings la possibilitat de pàgines web, en la mateixa branca master ja serveix i canvia-li el nom al repositori per a que s'adapti al que mostrarà
