@@ -1,4 +1,5 @@
-# OSM + ESP: Ejemplo comentado internamente de mapa personalizado de puntos sobre mapa OSM hecho con petición Overpass y renderizando geojson con Leaflet. OSM-ES: Puntos de Cobertura del 112
+# OSM + ESP: Ejemplo comentado internamente de mapa personalizado de puntos sobre mapa OSM hecho con petición Overpass y renderizando geojson con Leaflet. 
+# OSM-ES: Puntos de Cobertura del 112
 
 ## Instrucciones para el público general
 
