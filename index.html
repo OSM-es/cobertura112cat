@@ -48,7 +48,7 @@
    var getData = function () {
      var query = `
 	 
-//////////////EMPIZA PETICIÓN OVERPASS TURBO, sirve para internamente encontrar los puntos que queramos destacar
+//////////////EMPIEZA PETICIÓN OVERPASS TURBO, sirve para internamente encontrar los puntos que queramos destacar
 		//Tiempo de espera, antes de dar por fallido, para muchos datos tiempos más largos
      [out:json][timeout:60];
 		// Definimos España, este límite se puede encontrar exportando la búsqueda  "in Spain" hecha por el asistente de Overpass-turbo. Se puede buscar cualquier localización y al exportar la petición nos dará el código de área.
@@ -56,6 +56,9 @@
      (
      //  tipo de petición nodo["clave"="valor]
 	   node["emergency"](area.searchArea);
+	          // Una segunda petición
+     //  node["traffic_sign:backward"](area.searchArea);
+	 //Final de peticiones
      );
 /////////////ACABA PETICIÓN OVERPASS TURBO	 
      (._;>;);out;
@@ -91,7 +94,17 @@ if (feature.properties.tags['emergency'] == "access_point") {
 				// corresponde al nombre de la variable anterior		  
                           iconUrl: icon_112
                 });
+			// un segundo icono, y cumpliendo dos pares etiqueta=valor
+			//etiqueta entre claudátors [ ] i == valor	 && "segunda clave=segundovalor") {	
+			//				} else if (feature.properties.tags['traffic_sign:backward'] == "ES:B2a" && "side=right") {
+            //   icon = L.icon({
+            //            iconSize: [16, 16],
+            //           iconAnchor: [8, 0],
+            //           popupAnchor:  [1, -24],
+            //          iconUrl: icon_ES_B2a
+            // });
 				
+			// final de todos los valores y claves	
               }
 			  
 			  
