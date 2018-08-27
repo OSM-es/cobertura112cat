@@ -9,7 +9,7 @@
 4. Agrega las imágenes que requieras en la carpeta assets / img
 5. Disfruta de tu mapa con la dirección nombredetucuenta.github.io/nombrequelepongasalrepositorio
 
-Ejemplo: https://osm-es.github.io/mapacobertura112es/
+Ejemplo: https://osm-es.github.io/cobertura112es/
 
 ## Instrucciones avanzadas
 
